@@ -21,7 +21,7 @@ public class TowerWeappon : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private PlayerGold playerGold;
     private Tile ownertile;
-
+    
     public Sprite TowerSprite => towerTemplate.wapons[level].sprit;
     public float Damage => towerTemplate.wapons[level].damage;
     public float Rate => towerTemplate.wapons[level].rate;

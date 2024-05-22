@@ -20,10 +20,12 @@ public class Enemy : MonoBehaviour
 
     private IceBullet iceBullet;
 
-
+    Animator anim;
     private void Start()
     {
+        anim = GetComponent<Animator>();
         render = GetComponent<SpriteRenderer>();
+        anim.SetBool("isDie", false);
     }
 
     public void Update()
@@ -90,8 +92,18 @@ public class Enemy : MonoBehaviour
     }
     public void OnDie(EnemyDestoryType type)
     {
-        enemySpawner.DestoroyEnemy(type,this, Gold);
+
+        StartCoroutine(DieAnmation(type));
+      
     }
 
+    private IEnumerator DieAnmation(EnemyDestoryType type)
+    {
+        movement2D.MoveSpeed = 0f;
+        anim.SetBool("isDie", true);
+        yield return new WaitForSeconds(0.5f);
+        enemySpawner.DestoroyEnemy(type, this, Gold);
+
+    }
 
 }
