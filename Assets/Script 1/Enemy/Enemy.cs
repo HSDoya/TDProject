@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public enum EnemyDestoryType { kill = 0, Arrive }
@@ -20,12 +22,15 @@ public class Enemy : MonoBehaviour
 
     private IceBullet iceBullet;
 
+    private EnemyHP enemyhp;
+
     Animator anim;
     private void Start()
     {
         anim = GetComponent<Animator>();
         render = GetComponent<SpriteRenderer>();
         anim.SetBool("isDie", false);
+        enemyhp = GetComponent<EnemyHP>();
     }
 
     public void Update()
@@ -33,6 +38,11 @@ public class Enemy : MonoBehaviour
         if (movement2D.isSlow)
         {
             render.color = Color.blue;
+            if(enemyhp.CurrentHP <= 0)
+            {
+                movement2D.isSlow = false;
+            }
+           
         }
         else 
         {
@@ -101,6 +111,7 @@ public class Enemy : MonoBehaviour
     {
         movement2D.MoveSpeed = 0f;
         anim.SetBool("isDie", true);
+        render.color = Color.white;
         yield return new WaitForSeconds(0.5f);
         enemySpawner.DestoroyEnemy(type, this, Gold);
 
