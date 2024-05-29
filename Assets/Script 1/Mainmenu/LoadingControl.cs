@@ -11,6 +11,7 @@ public class LoadingControl : MonoBehaviour
 
     public void LoadScene(int sceneId)
     {
+        
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
