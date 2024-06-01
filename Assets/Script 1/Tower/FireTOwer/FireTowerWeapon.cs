@@ -29,7 +29,10 @@ public class FireTowerWeapon : MonoBehaviour
 
     public int MaxLevel => towerTemplate.wapons.Length;
 
-
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip fireSound;
 
     public void Setup(EnemySpawn enemySpawner, PlayerGold playerGold, Tile ownerTile)
     {
@@ -114,6 +117,7 @@ public class FireTowerWeapon : MonoBehaviour
     }
     private void spawnProjectile()
     {
+        audioSource.PlayOneShot(fireSound);
         GameObject clone = Instantiate(projectileprefab, spawnPoint.position, Quaternion.identity);
         clone.GetComponent<FireBullet>().Setup(attackTarget, towerTemplate.wapons[level].damage_fire, towerTemplate.wapons[level].burn);
     }
