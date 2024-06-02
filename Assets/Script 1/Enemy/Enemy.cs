@@ -25,6 +25,11 @@ public class Enemy : MonoBehaviour
     private EnemyHP enemyhp;
 
     Animator anim;
+
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip dieSound;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -109,6 +114,7 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator DieAnmation(EnemyDestoryType type)
     {
+        audioSource.PlayOneShot(dieSound);
         movement2D.MoveSpeed = 0f;
         anim.SetBool("isDie", true);
         render.color = Color.white;

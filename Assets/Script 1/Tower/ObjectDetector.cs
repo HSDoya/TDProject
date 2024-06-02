@@ -36,8 +36,21 @@ public class ObjectDetector : MonoBehaviour
         {
             return;
         }
-
         if (Input.GetMouseButtonDown(0))
+        {
+            HandleInput(Input.mousePosition);
+        }
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                HandleInput(touch.position);
+            }
+        }
+        /*
+        if (Input.GetMouseButtonDown(0) )
         {
             ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
@@ -80,5 +93,45 @@ public class ObjectDetector : MonoBehaviour
 
             }
         }
+        */
+
     }
+    private void HandleInput(Vector3 inputPosition)
+    {
+        ray = mainCamera.ScreenPointToRay(inputPosition);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            //광성에 부딪히는 객체의 tag가 tile면 
+            if (hit.transform.CompareTag("Tile"))
+            {
+                //타워를 생성
+                if (towerspawner.click_towerspawn)
+                {
+                    towerspawner.SpawnTower(hit.transform);
+                }
+                else if (icetowerspawn.click_icetower)
+                {
+                    icetowerspawn.SpawnTower(hit.transform);
+                }
+                else if (fireTowerSpawn.click_firetowerspawn)
+                {
+                    fireTowerSpawn.SpawnTower(hit.transform);
+                }
+            }
+            else if (hit.transform.CompareTag("Tower"))
+            {
+                towerDateViewer.OnPanel(hit.transform);
+            }
+            else if (hit.transform.CompareTag("IceTower"))
+            {
+                icetowerdataview.OnPanel(hit.transform);
+            }
+            else if (hit.transform.CompareTag("FireTower"))
+            {
+                fireDataView.OnPanel(hit.transform);
+            }
+        }
+    }
+
 }
