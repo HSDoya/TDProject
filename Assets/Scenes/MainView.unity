@@ -1322,6 +1322,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 814942271}
     m_Modifications:
+    - target: {fileID: 931490437734497849, guid: 5a5deb5b12967894baad843723723a66, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d550c1211cb26794e9d493e3cc6dcf61, type: 3}
+    - target: {fileID: 931490437734497849, guid: 5a5deb5b12967894baad843723723a66, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 931490437734497849, guid: 5a5deb5b12967894baad843723723a66, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 931490437734497849, guid: 5a5deb5b12967894baad843723723a66, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4165138511907187734, guid: 5a5deb5b12967894baad843723723a66, type: 3}
       propertyPath: m_Name
       value: Loadingpanal
