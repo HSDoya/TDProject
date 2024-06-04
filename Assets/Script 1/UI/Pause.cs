@@ -14,7 +14,7 @@ public class Pause : MonoBehaviour
         PauseUI.SetActive(false);
     }
     // 게임을 멈추는 함수
-    void PauseGame()
+    public void PauseGame()
     {
         PauseUI.SetActive(true);
         Time.timeScale = 0;
@@ -22,7 +22,7 @@ public class Pause : MonoBehaviour
     }
 
     // 게임을 다시 시작하는 함수
-   void ResumeGame()
+   public void ResumeGame()
     {
         PauseUI.SetActive(false);
         Time.timeScale = 1;
