@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
@@ -8,9 +9,12 @@ public class Pause : MonoBehaviour
     [SerializeField]
     private GameObject PauseUI;
 
+    public string thisScene;
+
 
     private void Awake()
     {
+        thisScene = SceneManager.GetActiveScene().name;
         PauseUI.SetActive(false);
     }
     // 게임을 멈추는 함수
@@ -27,5 +31,12 @@ public class Pause : MonoBehaviour
         PauseUI.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadSceneAsync(thisScene);
+        PauseUI.SetActive(false);
+        Time.timeScale = 1;
     }
 }

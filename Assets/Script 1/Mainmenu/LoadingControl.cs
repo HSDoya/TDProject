@@ -8,10 +8,14 @@ public class LoadingControl : MonoBehaviour
 {
     public GameObject LoadingScreen;
     public Image LoadingBarFill;
-    
+
+
+
+  
+
     public void LoadScene(int sceneId)
     {
-        
+    
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
