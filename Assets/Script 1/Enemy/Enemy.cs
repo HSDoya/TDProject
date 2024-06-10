@@ -18,9 +18,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer render;
     [SerializeField]
     private int Gold = 10;
-    private float slowbullet;
-
-    private IceBullet iceBullet;
+  
 
     private EnemyHP enemyhp;
 

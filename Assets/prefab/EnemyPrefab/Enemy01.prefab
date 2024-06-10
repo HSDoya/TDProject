@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79fee13885031b4186a22c036d47289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gold: 10
+  Gold: 15
   audioSource: {fileID: 4815311988226500551}
   dieSound: {fileID: 8300000, guid: f01c623f724825e44a923d1ae50256f2, type: 3}
 --- !u!114 &3492906513344821654
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4002f479f7d5ab94f8050c24ce5a6061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 1.5
   moveDirection: {x: 0, y: 0, z: 0}
   isSlow: 0
 --- !u!61 &4119330618131615244
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb9750c3512e4445af5499f73ae4f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 4
   fire: {fileID: 6746108809610815445, guid: a59a730671823344aac40c3ddb061c91, type: 3}
 --- !u!95 &8846679547391874001
 Animator:

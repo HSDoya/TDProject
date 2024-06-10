@@ -39,4 +39,10 @@ public class Pause : MonoBehaviour
         PauseUI.SetActive(false);
         Time.timeScale = 1;
     }
+    public void stagemenu()
+    {
+        SceneManager.LoadSceneAsync(1);
+        PauseUI.SetActive(false);
+        Time.timeScale = 1;
+    }
 }

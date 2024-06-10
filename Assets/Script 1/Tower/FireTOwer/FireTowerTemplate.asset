@@ -16,9 +16,9 @@ MonoBehaviour:
   wapons:
   - sprit: {fileID: 21300000, guid: 6ccb1afa737ab604f9f7c3de8c22b4f7, type: 3}
     damage_fire: 0
-    rate_fire: 2
+    rate_fire: 0.5
     range_fire: 1.5
-    burn: 0.1
+    burn: 0.3
     cost_fire: 55
     sell: 30
   - sprit: {fileID: 21300000, guid: 4dc052d150de2f84b915d5d37b0cfac3, type: 3}

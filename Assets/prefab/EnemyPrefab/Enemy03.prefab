@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4002f479f7d5ab94f8050c24ce5a6061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
+  moveSpeed: 2
   moveDirection: {x: 0, y: 0, z: 0}
   isSlow: 0
 --- !u!61 &4119330618131615244
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb9750c3512e4445af5499f73ae4f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 6
   fire: {fileID: 6746108809610815445, guid: a59a730671823344aac40c3ddb061c91, type: 3}
 --- !u!95 &3260363191673873384
 Animator:

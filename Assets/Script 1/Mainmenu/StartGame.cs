@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class StartGame : MonoBehaviour
 {
-   public void startGame()
+    public void ExitGame()
     {
-       
-        
+        Application.Quit();
     }
 }
