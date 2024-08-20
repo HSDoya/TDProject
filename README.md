@@ -1,3 +1,4 @@
 # TDProject
-Ptu flutter app project final project 
-기말과제 제출용 입니다. 
+## Ptu  app project final project 
+## 기간: 2024.03.02 ~ 2024.06.20
+
